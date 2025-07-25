@@ -96,7 +96,7 @@ Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para ma
 - Email: [joaobremgartner@pm.me](mailto:joaobremgartner@pm.me)
 - Twitter: [@joaobremgartner](https://twitter.com/joaobremgartner)
 - LinkedIn: [João Bremgartner](https://linkedin.com/in/joaobremgartner)
-- GitHub: [@bremgartner](https://github.com/bremgartner)
+- GitHub: [@engjoaofaro](https://github.com/engjoaofaro)
 
 ---
 
