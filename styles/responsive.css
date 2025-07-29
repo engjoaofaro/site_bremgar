@@ -46,6 +46,10 @@
     margin-top: 150px;
     font-size: 0.9rem;
   }
+
+  .section-title:first-of-type {
+    margin-top: 150px;
+  }
 }
 
 @media (max-width: 480px) {
@@ -72,6 +76,10 @@
   }
 
   .bio {
+    margin-top: 120px;
+  }
+
+  .section-title:first-of-type {
     margin-top: 120px;
   }
 }
