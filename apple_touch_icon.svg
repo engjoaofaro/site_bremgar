@@ -1,0 +1,81 @@
+<svg width="180" height="180" viewBox="0 0 180 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background with enhanced gradient -->
+  <rect width="180" height="180" rx="27" fill="url(#bg-gradient)"/>
+  
+  <!-- Inner glow -->
+  <rect x="5" y="5" width="170" height="170" rx="22" fill="url(#inner-glow)"/>
+  
+  <!-- Border with glow -->
+  <rect x="3" y="3" width="174" height="174" rx="24" stroke="rgba(100, 255, 218, 0.4)" stroke-width="2" fill="none"/>
+  
+  <!-- Terminal header area -->
+  <rect x="8" y="8" width="164" height="32" rx="8" fill="rgba(100, 255, 218, 0.08)"/>
+  
+  <!-- Terminal dots -->
+  <circle cx="20" cy="24" r="3" fill="#ff6b6b"/>
+  <circle cx="35" cy="24" r="3" fill="#ffd93d"/>
+  <circle cx="50" cy="24" r="3" fill="#6bcf7f"/>
+  
+  <!-- Main brackets -->
+  <path d="M45 82L35 90L45 98M40 104L32 112L40 120" stroke="#64ffda" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" filter="url(#glow)"/>
+  <path d="M135 82L145 90L135 98M140 104L148 112L140 120" stroke="#64ffda" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" filter="url(#glow)"/>
+  
+  <!-- Center initials with enhanced styling -->
+  <text x="90" y="108" text-anchor="middle" fill="#64ffda" font-family="SF Pro Display, -apple-system, monospace" font-size="32" font-weight="700" filter="url(#text-glow)">JB</text>
+  
+  <!-- Cursor -->
+  <rect x="115" y="95" width="2" height="20" fill="#64ffda" filter="url(#glow)">
+    <animate attributeName="opacity" values="1;0;1" dur="1.2s" repeatCount="indefinite"/>
+  </rect>
+  
+  <!-- Decorative code elements -->
+  <text x="25" y="65" fill="rgba(100, 255, 218, 0.3)" font-family="monospace" font-size="8">/*</text>
+  <text x="148" y="135" fill="rgba(100, 255, 218, 0.3)" font-family="monospace" font-size="8">*/</text>
+  <text x="30" y="145" fill="rgba(100, 255, 218, 0.3)" font-family="monospace" font-size="8">()</text>
+  <text x="140" y="72" fill="rgba(100, 255, 218, 0.3)" font-family="monospace" font-size="8">[]</text>
+  
+  <!-- Floating particles -->
+  <circle cx="153" cy="45" r="1" fill="rgba(100, 255, 218, 0.4)">
+    <animate attributeName="opacity" values="0.4;0.8;0.4" dur="2s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="36" cy="117" r="1" fill="rgba(100, 255, 218, 0.4)">
+    <animate attributeName="opacity" values="0.8;0.4;0.8" dur="2.5s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="135" cy="153" r="1" fill="rgba(100, 255, 218, 0.4)">
+    <animate attributeName="opacity" values="0.6;0.9;0.6" dur="3s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="162" cy="108" r="1" fill="rgba(100, 255, 218, 0.4)">
+    <animate attributeName="opacity" values="0.5;0.7;0.5" dur="2.2s" repeatCount="indefinite"/>
+  </circle>
+  
+  <!-- Definitions -->
+  <defs>
+    <linearGradient id="bg-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0a0a0a;stop-opacity:1" />
+      <stop offset="30%" style="stop-color:#1a1a1a;stop-opacity:1" />
+      <stop offset="70%" style="stop-color:#0f0f0f;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0a0a0a;stop-opacity:1" />
+    </linearGradient>
+    
+    <radialGradient id="inner-glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:rgba(100, 255, 218, 0.1);stop-opacity:1" />
+      <stop offset="100%" style="stop-color:rgba(100, 255, 218, 0.02);stop-opacity:1" />
+    </radialGradient>
+    
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+      <feMerge> 
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    
+    <filter id="text-glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="1" result="coloredBlur"/>
+      <feMerge> 
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+</svg>
