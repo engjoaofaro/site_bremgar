@@ -2,31 +2,43 @@ class TreeBuilder {
   constructor() {
     this.treeElement = document.querySelector('.tree-structure');
     this.treeData = {
-      'projetos/': {
+      'feature_projects/': {
         'web-development/': {
-          'react-apps/': {
-            'portfolio-site/': {},
-            'e-commerce-platform/': {}
+          'static-sites/': {
+            'bremgar-site': {
+              type: 'link',
+              url: 'https://github.com/engjoaofaro/site_bremgar'
+            },
           },
-          'vanilla-js/': {
-            'interactive-components/': {}
-          }
         },
-        'backend/': {
-          'node-apis/': {
-            'auth-service/': {},
-            'payment-gateway/': {}
+        'data_analysis/': {
+          'cases_datacamp/': {
+            'netflix_case': {
+              type: 'link',
+              url: 'https://github.com/engjoaofaro/netflix_case_datacamp'
+            },
+            'nyc_schools_case': {
+              type: 'link',
+              url: 'https://github.com/engjoaofaro/nyc_public_school_case_datacamp'
+            }
           },
           'python-scripts/': {
-            'data-analysis/': {}
+            'data-analysis': {
+              type: 'link',
+              url: 'https://github.com/engjoaofaro/loterias-app-core'
+            }
           }
         },
-        'mobile/': {
-          'react-native/': {
-            'fitness-tracker/': {}
-          },
-          'flutter/': {
-            'expense-manager/': {}
+        'web-app/': {
+          'java/': {
+            'loterias-app-v2': {
+              type: 'link',
+              url: 'https://github.com/engjoaofaro/loterias-app-v2'
+            },
+            'scheduler-app': {
+              type: 'link',
+              url: 'https://github.com/engjoaofaro/scheduler-webapp'
+            }
           }
         }
       }
@@ -42,10 +54,20 @@ class TreeBuilder {
       const connector = isLastEntry ? '└── ' : '├── ';
       const childPrefix = prefix + (isLastEntry ? '    ' : '│   ');
 
-      result += prefix + connector + name + '\n';
+      // Verifica se é um link
+      if (children.type === 'link') {
+        result += `${prefix}${connector}<a href="${children.url}" target="_blank" class="tree-link">${name}</a>\n`;
+      } else {
+        result += prefix + connector + name + '\n';
+      }
 
-      if (Object.keys(children).length > 0) {
-        result += this.buildTree(children, childPrefix);
+      // Remove a propriedade 'type' e 'url' antes de verificar se há filhos
+      const childrenWithoutMeta = { ...children };
+      delete childrenWithoutMeta.type;
+      delete childrenWithoutMeta.url;
+
+      if (Object.keys(childrenWithoutMeta).length > 0) {
+        result += this.buildTree(childrenWithoutMeta, childPrefix);
       }
     });
 
@@ -56,7 +78,7 @@ class TreeBuilder {
     if (!this.treeElement) return;
 
     const treeString = this.buildTree(this.treeData);
-    this.treeElement.textContent = treeString;
+    this.treeElement.innerHTML = treeString; // Mudou de textContent para innerHTML para suportar HTML
   }
 
   init() {
