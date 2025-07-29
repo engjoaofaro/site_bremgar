@@ -152,7 +152,7 @@
 .bio {
   line-height: 1.8;
   margin-bottom: 30px;
-  margin-top: 200px;
+  margin-top: 0;
   font-size: 0.95rem;
   color: var(--text-secondary);
   opacity: 0;
@@ -160,10 +160,24 @@
 }
 
 .terminal-line {
-  margin: 20px 0;
+  margin: 0 0 20px 0;
   font-size: 1rem;
   opacity: 0;
   animation: fadeIn 1s 1.5s ease-out forwards;
+}
+
+.section-title {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: var(--primary-color);
+  margin-top: 30px;
+  margin-bottom: 10px;
+  text-align: left;
+  opacity: 0;
+  animation: fadeIn 1s 0.8s ease-out forwards;
+}
+.section-title:first-of-type {
+  margin-top: 200px;
 }
 
 .prompt {
