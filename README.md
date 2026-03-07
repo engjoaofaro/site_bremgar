@@ -1,5 +1,24 @@
 # site_bremgar
-My personal website.
+Meu site pessoal.
+
+## Tecnologias Utilizadas
+
+**Core**
+- **HTML5** — marcação (`index.html`, página do blog)
+- **CSS3** — dividido em múltiplos arquivos (`styles/main.css`, `base.css`, `components.css`, `animations.css`, `responsive.css`, `blog.css`)
+- **JavaScript Puro** — sem frameworks, dividido em módulos: `particles.js`, `banner.js`, `tree.js`, `animations.js`, `main.js`
+
+**CDN Externo**
+- **Font Awesome 6.4.0** — biblioteca de ícones (carregada via CDN)
+
+**Assets**
+- Favicons em SVG e PNG
+- Imagem PNG para foto de perfil
+
+**Controle de Versão**
+- **Git**
+
+Sem ferramentas de build, sem gerenciadores de pacotes, sem frameworks JavaScript — é um site estático puro, sem dependências.
 
 ## 🎨 Características do Design
 
