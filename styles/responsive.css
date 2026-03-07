@@ -38,7 +38,8 @@
   }
 
   .social-links {
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     gap: 10px;
   }
 
@@ -47,12 +48,12 @@
     font-size: 0.9rem;
   }
 
-  .section-title:first-of-type {
+  section:first-of-type > .section-title {
     margin-top: 150px;
     margin-bottom: 15px;
   }
 
-  .section-title:first-of-type + .bio {
+  section:first-of-type > .section-title + .bio {
     margin-top: 0;
   }
 }
@@ -84,12 +85,12 @@
     margin-top: 120px;
   }
 
-  .section-title:first-of-type {
+  section:first-of-type > .section-title {
     margin-top: 120px;
     margin-bottom: 10px;
   }
 
-  .section-title:first-of-type + .bio {
+  section:first-of-type > .section-title + .bio {
     margin-top: 0;
   }
 }

@@ -45,40 +45,44 @@ class TreeBuilder {
     };
   }
 
-  buildTree(data, prefix = '') {
-    let result = '';
+  buildTree(data, prefix, fragment) {
     const entries = Object.entries(data);
 
     entries.forEach(([name, children], index) => {
       const isLastEntry = index === entries.length - 1;
-      const connector = isLastEntry ? '└── ' : '├── ';
-      const childPrefix = prefix + (isLastEntry ? '    ' : '│   ');
+      const connector = isLastEntry ? '\u2514\u2500\u2500 ' : '\u251C\u2500\u2500 ';
+      const childPrefix = prefix + (isLastEntry ? '    ' : '\u2502   ');
 
-      // Verifica se é um link
       if (children.type === 'link') {
-        result += `${prefix}${connector}<a href="${children.url}" target="_blank" class="tree-link">${name}</a>\n`;
+        fragment.appendChild(document.createTextNode(prefix + connector));
+        const link = document.createElement('a');
+        link.href = children.url;
+        link.target = '_blank';
+        link.className = 'tree-link';
+        link.textContent = name;
+        fragment.appendChild(link);
+        fragment.appendChild(document.createTextNode('\n'));
       } else {
-        result += prefix + connector + name + '\n';
+        fragment.appendChild(document.createTextNode(prefix + connector + name + '\n'));
       }
 
-      // Remove a propriedade 'type' e 'url' antes de verificar se há filhos
       const childrenWithoutMeta = { ...children };
       delete childrenWithoutMeta.type;
       delete childrenWithoutMeta.url;
 
       if (Object.keys(childrenWithoutMeta).length > 0) {
-        result += this.buildTree(childrenWithoutMeta, childPrefix);
+        this.buildTree(childrenWithoutMeta, childPrefix, fragment);
       }
     });
-
-    return result;
   }
 
   render() {
     if (!this.treeElement) return;
 
-    const treeString = this.buildTree(this.treeData);
-    this.treeElement.innerHTML = treeString; // Mudou de textContent para innerHTML para suportar HTML
+    const fragment = document.createDocumentFragment();
+    this.buildTree(this.treeData, '', fragment);
+    this.treeElement.textContent = '';
+    this.treeElement.appendChild(fragment);
   }
 
   init() {

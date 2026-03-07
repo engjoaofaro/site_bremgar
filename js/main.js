@@ -16,9 +16,7 @@ class Portfolio {
       }
     });
 
-    // Log para debug (opcional)
-    console.log('Portfolio inicializado com sucesso!');
-  }
+}
 
   destroy() {
     // Limpar recursos se necessário
