@@ -18,14 +18,16 @@ concurrency:
   group: deploy-site-bremgar
   cancel-in-progress: true
 
+# Suporta tanto Secrets quanto Variables (vars.* ou secrets.*), cobriremos todos os padrões usados nos seus outros repositórios
 env:
-  AWS_REGION: sa-east-1
-  AWS_ROLE_ARN: ${{ secrets.AWS_ROLE_ARN || 'arn:aws:iam::585482653811:role/site-bremgar-gha' }}
-  S3_BUCKET: ${{ secrets.S3_BUCKET || 'site-bremgar-prod' }}
-  CLOUDFRONT_DISTRIBUTION_ID: ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }}
+  AWS_REGION: ${{ vars.AWS_REGION || 'us-east-1' }}
+  AWS_ROLE_ARN: ${{ secrets.AWS_ROLE_ARN || vars.AWS_DEPLOY_ROLE_ARN || vars.AWS_ROLE_ARN || 'arn:aws:iam::585482653811:role/site-bremgar-gha' }}
+  S3_BUCKET: ${{ secrets.S3_BUCKET || vars.S3_BUCKET || 'bremgar.dev.br' }}
+  CLOUDFRONT_DISTRIBUTION_ID: ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID || vars.CLOUDFRONT_DISTRIBUTION_ID || 'EUVQGTCZ9XLXH' }}
 
 jobs:
   deploy:
+    name: Build & Deploy to AWS
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
@@ -37,38 +39,37 @@ jobs:
           role-to-assume: ${{ env.AWS_ROLE_ARN }}
           aws-region: ${{ env.AWS_REGION }}
 
-      - name: Sync static website files to S3
+      - name: Sync static assets to S3 (Cache de longo prazo / Immutable)
         run: |
-          echo "🚀 Sincronizando arquivos com o bucket S3: s3://${S3_BUCKET}..."
+          echo "🚀 Sincronizando assets com o bucket S3: s3://${S3_BUCKET}..."
           aws s3 sync . "s3://${S3_BUCKET}/" \
             --delete \
+            --cache-control "public, max-age=31536000, immutable" \
+            --exclude "*.html" \
             --exclude ".git/*" \
             --exclude ".github/*" \
+            --exclude ".claude/*" \
             --exclude ".idea/*" \
             --exclude ".remember/*" \
             --exclude ".DS_Store" \
             --exclude "README.md" \
             --exclude "LICENSE" \
-            --exclude "scripts/*" \
-            --cache-control "max-age=86400, public"
+            --exclude "scripts/*"
 
-          # Otimização de cache: HTML nunca em cache de longo prazo no navegador (para ver mudanças instantâneas via CloudFront)
-          echo "⚡ Re-aplicando cabeçalho no-cache para arquivos HTML..."
-          aws s3 cp "s3://${S3_BUCKET}/" "s3://${S3_BUCKET}/" \
-            --recursive \
+      - name: Sync HTML files to S3 (Sem cache / Revalidação instantânea)
+        run: |
+          echo "⚡ Sincronizando arquivos HTML com revalidação (no-cache)..."
+          aws s3 sync . "s3://${S3_BUCKET}/" \
+            --cache-control "public, max-age=0, must-revalidate" \
             --exclude "*" \
             --include "*.html" \
-            --metadata-directive REPLACE \
-            --cache-control "no-cache, no-store, must-revalidate" \
             --content-type "text/html; charset=utf-8"
 
       - name: Invalidate CloudFront Cache
-        if: env.CLOUDFRONT_DISTRIBUTION_ID != ''
+        if: env.CLOUDFRONT_DISTRIBUTION_ID != '' && env.CLOUDFRONT_DISTRIBUTION_ID != null
         run: |
           echo "🔄 Invalidando cache da distribuição CloudFront: ${CLOUDFRONT_DISTRIBUTION_ID}..."
-          INVALIDATION_ID=$(aws cloudfront create-invalidation \
+          aws cloudfront create-invalidation \
             --distribution-id "$CLOUDFRONT_DISTRIBUTION_ID" \
-            --paths '/*' \
-            --query 'Invalidation.Id' \
-            --output text)
-          echo "✅ Invalidação solicitada com sucesso! ID: $INVALIDATION_ID"
+            --paths '/*'
+          echo "✅ Invalidação solicitada com sucesso!"
