@@ -56,6 +56,14 @@
   section:first-of-type > .section-title + .bio {
     margin-top: 0;
   }
+
+  .project-card {
+    padding: 18px;
+  }
+
+  .project-title {
+    font-size: 1.15rem;
+  }
 }
 
 @media (max-width: 480px) {
@@ -93,4 +101,25 @@
   section:first-of-type > .section-title + .bio {
     margin-top: 0;
   }
+
+  .project-card {
+    padding: 15px;
+  }
+
+  .project-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .project-links {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .project-btn {
+    width: 100%;
+    justify-content: center;
+  }
 }
+

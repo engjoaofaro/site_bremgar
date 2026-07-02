@@ -30,6 +30,24 @@ class TreeBuilder {
           }
         },
         'web-app/': {
+          'saas-platforms/': {
+            'beautyops': {
+              type: 'link',
+              url: 'https://github.com/engjoaofaro/beautyops'
+            },
+            '100porcentojogos-site': {
+              type: 'link',
+              url: 'https://github.com/engjoaofaro/100porcentojogos-site'
+            },
+            'iracing-tmp': {
+              type: 'link',
+              url: 'https://github.com/engjoaofaro/iracing-tmp'
+            },
+            'loterias-sim-web': {
+              type: 'link',
+              url: 'https://github.com/engjoaofaro/loterias-sim-web'
+            }
+          },
           'java/': {
             'loterias-app-v2': {
               type: 'link',

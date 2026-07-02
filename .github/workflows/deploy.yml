@@ -1,0 +1,74 @@
+name: Deploy Site Bremgar
+
+on:
+  push:
+    branches: [main, master]
+    paths-ignore:
+      - 'README.md'
+      - 'LICENSE'
+      - '.gitignore'
+  workflow_dispatch:
+
+# OIDC: permite assumir IAM role sem necessidade de chaves de acesso estáticas (AWS_ACCESS_KEY_ID / AWS_SECRET_ACCESS_KEY)
+permissions:
+  id-token: write
+  contents: read
+
+concurrency:
+  group: deploy-site-bremgar
+  cancel-in-progress: true
+
+env:
+  AWS_REGION: sa-east-1
+  AWS_ROLE_ARN: ${{ secrets.AWS_ROLE_ARN || 'arn:aws:iam::585482653811:role/site-bremgar-gha' }}
+  S3_BUCKET: ${{ secrets.S3_BUCKET || 'site-bremgar-prod' }}
+  CLOUDFRONT_DISTRIBUTION_ID: ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }}
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Configure AWS credentials (OIDC)
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: ${{ env.AWS_ROLE_ARN }}
+          aws-region: ${{ env.AWS_REGION }}
+
+      - name: Sync static website files to S3
+        run: |
+          echo "🚀 Sincronizando arquivos com o bucket S3: s3://${S3_BUCKET}..."
+          aws s3 sync . "s3://${S3_BUCKET}/" \
+            --delete \
+            --exclude ".git/*" \
+            --exclude ".github/*" \
+            --exclude ".idea/*" \
+            --exclude ".remember/*" \
+            --exclude ".DS_Store" \
+            --exclude "README.md" \
+            --exclude "LICENSE" \
+            --exclude "scripts/*" \
+            --cache-control "max-age=86400, public"
+
+          # Otimização de cache: HTML nunca em cache de longo prazo no navegador (para ver mudanças instantâneas via CloudFront)
+          echo "⚡ Re-aplicando cabeçalho no-cache para arquivos HTML..."
+          aws s3 cp "s3://${S3_BUCKET}/" "s3://${S3_BUCKET}/" \
+            --recursive \
+            --exclude "*" \
+            --include "*.html" \
+            --metadata-directive REPLACE \
+            --cache-control "no-cache, no-store, must-revalidate" \
+            --content-type "text/html; charset=utf-8"
+
+      - name: Invalidate CloudFront Cache
+        if: env.CLOUDFRONT_DISTRIBUTION_ID != ''
+        run: |
+          echo "🔄 Invalidando cache da distribuição CloudFront: ${CLOUDFRONT_DISTRIBUTION_ID}..."
+          INVALIDATION_ID=$(aws cloudfront create-invalidation \
+            --distribution-id "$CLOUDFRONT_DISTRIBUTION_ID" \
+            --paths '/*' \
+            --query 'Invalidation.Id' \
+            --output text)
+          echo "✅ Invalidação solicitada com sucesso! ID: $INVALIDATION_ID"
