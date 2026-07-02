@@ -1,73 +1,73 @@
-# João Bremgartner - Personal Portfolio
+# João Bremgartner - Portfólio Pessoal
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-[![Deploy Status](https://img.shields.io/badge/Deploy-Auto-brightgreen)](https://bremgar.dev.br)
-[![Made with HTML/CSS/JS](https://img.shields.io/badge/Made%20with-HTML%2FCSS%2FJS-blue)](https://developer.mozilla.org/)
+[![Licença: MIT](https://img.shields.io/badge/Licença-MIT-yellow.svg)](LICENSE)
+[![Status Deploy](https://img.shields.io/badge/Deploy-Automático-brightgreen)](https://bremgar.dev.br)
+[![Feito com HTML/CSS/JS](https://img.shields.io/badge/Feito%20com-HTML%2FCSS%2FJS-blue)](https://developer.mozilla.org/)
 
-A modern, zero-dependency personal portfolio website showcasing projects and expertise. Built with vanilla HTML5, CSS3, and JavaScript with beautiful animations, responsive design, and optimal performance.
+Um portfólio pessoal moderno e sem dependências externas que apresenta projetos e experiência. Construído com HTML5, CSS3 e JavaScript puro, com animações bonitas, design responsivo e performance otimizada.
 
-**Live at:** [bremgar.dev.br](https://bremgar.dev.br)
+**Acesse em:** [bremgar.dev.br](https://bremgar.dev.br)
 
-## ✨ Highlights
+## ✨ Destaques
 
-- 🎨 **Modern Dark Theme** — Elegant UI with custom color palette and smooth transitions
-- ⚡ **Zero Dependencies** — Pure vanilla stack, no build tools, no package managers
-- 🎭 **Rich Animations** — Floating particles, interactive code symbols, parallax effects
-- 📱 **Fully Responsive** — Optimized for mobile, tablet, and desktop screens
-- 🚀 **Performance First** — Lightweight, fast-loading, optimized assets
-- 🔍 **SEO Optimized** — Proper meta tags, semantic HTML, Open Graph support
-- ♿ **Accessible** — ARIA labels, semantic markup, keyboard-friendly
+- 🎨 **Tema Dark Moderno** — Interface elegante com paleta de cores personalizada e transições suaves
+- ⚡ **Zero Dependências** — Stack vanilla puro, sem ferramentas de build, sem gerenciadores de pacotes
+- 🎭 **Animações Ricas** — Partículas flutuantes, símbolos de código interativos, efeitos parallax
+- 📱 **Totalmente Responsivo** — Otimizado para mobile, tablet e desktop
+- 🚀 **Performance em Primeiro Lugar** — Leve, carregamento rápido, assets otimizados
+- 🔍 **SEO Otimizado** — Meta tags apropriadas, HTML semântico, suporte a Open Graph
+- ♿ **Acessível** — Labels ARIA, markup semântico, amigável com teclado
 
-## 🏗️ Architecture
+## 🏗️ Arquitetura
 
-### Tech Stack
+### Stack de Tecnologias
 
-| Layer | Technology | Details |
-|-------|-----------|---------|
-| **Markup** | HTML5 | Semantic, accessible structure with proper meta tags |
-| **Styling** | CSS3 | Modular architecture: `main.css`, `base.css`, `components.css`, `animations.css`, `responsive.css`, `blog.css` |
-| **Interactivity** | Vanilla JS | Modular structure: `particles.js`, `banner.js`, `tree.js`, `animations.js`, `main.js` |
-| **Icons** | Font Awesome 6.4.0 | Via CDN for extensibility |
-| **Fonts** | JetBrains Mono | Google Fonts — monospace aesthetic for code-focused design |
+| Camada | Tecnologia | Detalhes |
+|--------|-----------|----------|
+| **Marcação** | HTML5 | Estrutura semântica e acessível com meta tags apropriadas |
+| **Estilos** | CSS3 | Arquitetura modular: `main.css`, `base.css`, `components.css`, `animations.css`, `responsive.css`, `blog.css` |
+| **Interatividade** | JavaScript Puro | Estrutura modular: `particles.js`, `banner.js`, `tree.js`, `animations.js`, `main.js` |
+| **Ícones** | Font Awesome 6.4.0 | Via CDN para extensibilidade |
+| **Fontes** | JetBrains Mono | Google Fonts — estética monospace focada em código |
 
-### Zero-Dependency Philosophy
+### Filosofia Zero-Dependências
 
-- ✅ No build tools (Webpack, Vite, etc.)
-- ✅ No package managers (npm, yarn, etc.)
-- ✅ No JavaScript frameworks (React, Vue, Angular, etc.)
-- ✅ Pure HTML, CSS, and JavaScript
-- ✅ Only one external CDN (Font Awesome) — can be replaced with inline SVGs
+- ✅ Sem ferramentas de build (Webpack, Vite, etc.)
+- ✅ Sem gerenciadores de pacotes (npm, yarn, etc.)
+- ✅ Sem frameworks JavaScript (React, Vue, Angular, etc.)
+- ✅ HTML, CSS e JavaScript puro
+- ✅ Apenas um CDN externo (Font Awesome) — pode ser substituído por SVGs inline
 
-## 🎨 Design System
+## 🎨 Sistema de Design
 
-### Visual Identity
-- **Color Scheme** — Dark theme with vibrant accents
-- **Typography** — JetBrains Mono for technical aesthetic
-- **Layout Grid** — Flexible, mobile-first responsive design
-- **Spacing** — Consistent rhythm with CSS custom properties
+### Identidade Visual
+- **Paleta de Cores** — Tema escuro com acentos vibrantes
+- **Tipografia** — JetBrains Mono para estética técnica
+- **Grade de Layout** — Design responsivo flexível, mobile-first
+- **Espaçamento** — Ritmo consistente com propriedades CSS customizadas
 
-### Interactive Features
-- **Floating Particles** — Dynamic background animation
-- **Code Symbol Animation** — Animated coding characters in hero
-- **Parallax Effects** — Subtle mouse-based movement
-- **Terminal Cursor** — Blinking cursor effect for aesthetics
-- **Smooth Transitions** — Hover states and page transitions
+### Recursos Interativos
+- **Partículas Flutuantes** — Animação dinâmica de fundo
+- **Animação de Símbolos** — Caracteres de código animados no hero
+- **Efeitos Parallax** — Movimento sutil baseado no mouse
+- **Cursor de Terminal** — Efeito de cursor piscante
+- **Transições Suaves** — Estados hover e transições de página
 
-## 🚀 Getting Started
+## 🚀 Como Começar
 
-### Prerequisites
-- A modern web browser
-- (Optional) A local server for development
+### Pré-requisitos
+- Um navegador web moderno
+- (Opcional) Um servidor local para desenvolvimento
 
-### Local Development
+### Desenvolvimento Local
 
-1. **Clone the repository**
+1. **Clone o repositório**
    ```bash
    git clone https://github.com/engjoaofaro/site_bremgar.git
    cd site_bremgar
    ```
 
-2. **Run a local server** (recommended to avoid CORS issues)
+2. **Execute um servidor local** (recomendado para evitar problemas de CORS)
    ```bash
    # Python 3
    python -m http.server 8000
@@ -75,200 +75,200 @@ A modern, zero-dependency personal portfolio website showcasing projects and exp
    # Python 2
    python -m SimpleHTTPServer 8000
    
-   # Node.js with npx
+   # Node.js com npx
    npx serve .
    
-   # Using PHP
+   # Usando PHP
    php -S localhost:8000
    ```
 
-3. **Open in your browser**
+3. **Abra no seu navegador**
    ```
    http://localhost:8000
    ```
 
-### Quick Start (No Server)
-Simply open `index.html` directly in your browser, though some features may have limitations due to browser security restrictions.
+### Início Rápido (Sem Servidor)
+Simplesmente abra `index.html` diretamente no navegador, embora alguns recursos possam ter limitações devido às restrições de segurança do navegador.
 
-### Production Deployment
-This site is automatically deployed to AWS CloudFront on every push to `main` branch via GitHub Actions. See `.github/workflows/deploy.yml` for CI/CD configuration.
+### Deploy em Produção
+Este site é implantado automaticamente no AWS CloudFront a cada push na branch `main` via GitHub Actions. Veja `.github/workflows/deploy.yml` para a configuração de CI/CD.
 
-## 📋 Features
+## 📋 Funcionalidades
 
-### ✅ Current Features
+### ✅ Funcionalidades Atuais
 
-- **Hero Section** — Eye-catching banner with animated code symbols and floating particles
-- **Profile Card** — Professional introduction with photo and current role
-- **Projects Showcase** — Featured projects with tech stack badges and live links
-- **Responsive Layout** — Mobile-first design that scales to all screen sizes
-- **Interactive Elements** — Smooth animations, hover effects, and cursor interactions
-- **Social Links** — Quick access to email, Twitter, LinkedIn, and GitHub
-- **SEO Optimized** — Meta tags, Open Graph, Twitter Cards for social sharing
-- **Performance** — No external dependencies beyond icons, minimal JavaScript
+- **Seção Hero** — Banner atraente com símbolos de código animados e partículas flutuantes
+- **Cartão de Perfil** — Apresentação profissional com foto e cargo atual
+- **Showcase de Projetos** — Projetos em destaque com badges de stack técnico e links ao vivo
+- **Layout Responsivo** — Design mobile-first que se adapta a todos os tamanhos de tela
+- **Elementos Interativos** — Animações suaves, efeitos hover e interações com cursor
+- **Links Sociais** — Acesso rápido a email, Twitter, LinkedIn e GitHub
+- **Otimizado para SEO** — Meta tags, Open Graph, Twitter Cards para compartilhamento social
+- **Performance** — Sem dependências externas além de ícones, JavaScript mínimo
 
 ### 🗺️ Roadmap
 
-| Phase | Feature | Status |
-|-------|---------|--------|
-| **Blog System** | Markdown-based posts | `Planned` |
-| | Categories & tags | `Planned` |
-| | Search functionality | `Planned` |
-| | RSS feed | `Planned` |
-| **Portfolio** | Dedicated projects page | `Planned` |
-| | Technology filters | `Planned` |
-| | Project screenshots gallery | `Planned` |
-| | Case study documentation | `Planned` |
-| **Enhancements** | Dark/Light theme toggle | `Planned` |
-| | i18n (PT/EN/ES) | `Planned` |
-| | PWA support | `Planned` |
-| | Analytics integration | `Planned` |
-| | Webring support | `Planned` |
+| Fase | Funcionalidade | Status |
+|------|----------------|--------|
+| **Sistema de Blog** | Posts em Markdown | `Planejado` |
+| | Categorias & tags | `Planejado` |
+| | Funcionalidade de busca | `Planejado` |
+| | Feed RSS | `Planejado` |
+| **Portfólio** | Página dedicada a projetos | `Planejado` |
+| | Filtros por tecnologia | `Planejado` |
+| | Galeria de screenshots | `Planejado` |
+| | Documentação de case studies | `Planejado` |
+| **Melhorias** | Toggle tema escuro/claro | `Planejado` |
+| | Internacionalização (PT/EN/ES) | `Planejado` |
+| | Suporte PWA | `Planejado` |
+| | Integração com analytics | `Planejado` |
+| | Suporte webring | `Planejado` |
 
-## 🤝 Contributing
+## 🤝 Contribuindo
 
-While this is my personal portfolio, suggestions, improvements, and contributions are always welcome! Whether it's a bug fix, design improvement, or new feature idea, feel free to open an issue or submit a PR.
+Embora este seja meu portfólio pessoal, sugestões, melhorias e contribuições são sempre bem-vindas! Seja uma correção de bug, melhoria de design ou ideia de nova funcionalidade, sinta-se à vontade para abrir uma issue ou enviar um PR.
 
-### Development Workflow
+### Fluxo de Desenvolvimento
 
-1. **Fork the repository**
+1. **Faça um fork do repositório**
    ```bash
    gh repo fork engjoaofaro/site_bremgar --clone
    ```
 
-2. **Create a feature branch**
+2. **Crie uma branch para sua feature**
    ```bash
-   git checkout -b feature/your-amazing-feature
+   git checkout -b feature/sua-feature-incrivel
    ```
 
-3. **Make your changes**
-   - Keep CSS modular and organized
-   - Follow the existing code style
-   - Test on mobile and desktop
+3. **Faça suas alterações**
+   - Mantenha CSS modular e organizado
+   - Siga o estilo de código existente
+   - Teste em mobile e desktop
 
-4. **Commit with clear messages**
+4. **Commit com mensagens claras**
    ```bash
-   git commit -m "feat: add your amazing feature"
+   git commit -m "feat: adicionar sua feature incrível"
    ```
 
-5. **Push and create a Pull Request**
+5. **Push e crie um Pull Request**
    ```bash
-   git push origin feature/your-amazing-feature
+   git push origin feature/sua-feature-incrivel
    ```
 
-## 📄 License
+## 📄 Licença
 
-This project is licensed under the **MIT License** — see [LICENSE](LICENSE) for details.
+Este projeto está licenciado sob a **Licença MIT** — veja [LICENSE](LICENSE) para detalhes.
 
-You're free to use, modify, and distribute this code in your own projects.
+Você é livre para usar, modificar e distribuir este código em seus próprios projetos.
 
-## 💬 Get in Touch
+## 💬 Entre em Contato
 
-I'd love to hear from you! Feel free to reach out:
+Adoraria ouvir de você! Sinta-se à vontade para entrar em contato:
 
-| Channel | Link |
-|---------|------|
+| Canal | Link |
+|-------|------|
 | **Email** | [joaobremgartner@pm.me](mailto:joaobremgartner@pm.me) |
 | **Twitter** | [@joaobremgartner](https://twitter.com/joaobremgartner) |
 | **LinkedIn** | [João Bremgartner](https://linkedin.com/in/joaobremgartner) |
 | **GitHub** | [@engjoaofaro](https://github.com/engjoaofaro) |
 | **Website** | [bremgar.dev.br](https://bremgar.dev.br) |
 
-## 🙏 Show Your Support
+## 🙏 Mostre seu Apoio
 
-- ⭐ **Star this repository** if you find it helpful
-- 🐛 **Report bugs** by opening an issue
-- 💡 **Suggest features** you'd like to see
-- 🚀 **Contribute** with pull requests
+- ⭐ **Deixe uma star** neste repositório se achar útil
+- 🐛 **Reporte bugs** abrindo uma issue
+- 💡 **Sugira features** que gostaria de ver
+- 🚀 **Contribua** com pull requests
 
-## 📁 Project Structure
+## 📁 Estrutura do Projeto
 
 ```
 site_bremgar/
-├── index.html                 # Main landing page
-├── blog/                      # Blog posts (future)
-├── image/                     # Images and assets
-│   └── photo.png             # Profile photo
-├── styles/                    # CSS modules
-│   ├── main.css              # Main stylesheet
-│   ├── base.css              # Base styles & variables
-│   ├── components.css        # Component styles
-│   ├── animations.css        # Animation definitions
+├── index.html                 # Página principal de landing
+├── blog/                      # Posts do blog (futuro)
+├── image/                     # Imagens e assets
+│   └── photo.png             # Foto de perfil
+├── styles/                    # Módulos CSS
+│   ├── main.css              # Stylesheet principal
+│   ├── base.css              # Estilos base & variáveis
+│   ├── components.css        # Estilos de componentes
+│   ├── animations.css        # Definições de animações
 │   ├── responsive.css        # Media queries
-│   └── blog.css              # Blog styles
-├── js/                        # JavaScript modules
-│   ├── main.js               # Entry point
-│   ├── particles.js          # Floating particles effect
-│   ├── banner.js             # Hero banner animation
-│   ├── tree.js               # Project tree structure
-│   └── animations.js         # General animations
-├── favicon.*                  # Favicon files (SVG, PNG)
-├── apple-touch-icon.png      # iOS icon
-├── .github/                   # GitHub specific files
-│   └── workflows/            # CI/CD automation
-├── .claude/                   # Claude Code settings
-├── README.md                  # This file
-└── LICENSE                    # MIT License
+│   └── blog.css              # Estilos do blog
+├── js/                        # Módulos JavaScript
+│   ├── main.js               # Ponto de entrada
+│   ├── particles.js          # Efeito de partículas flutuantes
+│   ├── banner.js             # Animação do banner hero
+│   ├── tree.js               # Estrutura de árvore de projetos
+│   └── animations.js         # Animações gerais
+├── favicon.*                  # Arquivos de favicon (SVG, PNG)
+├── apple-touch-icon.png      # Ícone para iOS
+├── .github/                   # Arquivos específicos do GitHub
+│   └── workflows/            # Automação de CI/CD
+├── .claude/                   # Configurações do Claude Code
+├── README.md                  # Este arquivo
+└── LICENSE                    # Licença MIT
 ```
 
 ## ⚡ Performance
 
-This site is optimized for speed and efficiency:
+Este site é otimizado para velocidade e eficiência:
 
-- **No Build Process** — Served as-is, no compilation overhead
-- **Minimal Dependencies** — Only Font Awesome via CDN
-- **Optimized Assets** — Compressed images and SVG favicons
-- **Efficient CSS** — Modular structure, no bloat
-- **Vanilla JavaScript** — No framework overhead, ~1.5KB minified JS
-- **Fast Loading** — Typically loads in under 500ms
+- **Sem Processo de Build** — Servido como está, sem overhead de compilação
+- **Dependências Mínimas** — Apenas Font Awesome via CDN
+- **Assets Otimizados** — Imagens comprimidas e favicons SVG
+- **CSS Eficiente** — Estrutura modular, sem bloat
+- **JavaScript Puro** — Sem overhead de framework, ~1.5KB de JS minificado
+- **Carregamento Rápido** — Tipicamente carrega em menos de 500ms
 
-## 🌐 Browser Support
+## 🌐 Suporte de Navegadores
 
-- ✅ Chrome/Chromium (latest)
-- ✅ Firefox (latest)
-- ✅ Safari (latest)
-- ✅ Edge (latest)
-- ✅ Mobile browsers (iOS Safari, Chrome Mobile)
+- ✅ Chrome/Chromium (versão mais recente)
+- ✅ Firefox (versão mais recente)
+- ✅ Safari (versão mais recente)
+- ✅ Edge (versão mais recente)
+- ✅ Navegadores mobile (iOS Safari, Chrome Mobile)
 
-## 🔒 Security
+## 🔒 Segurança
 
-- No external scripts except Font Awesome icon library
-- No tracking or analytics (yet)
-- No cookies or local storage
-- Content Security Policy friendly
-- No sensitive data collection
+- Sem scripts externos além da biblioteca de ícones Font Awesome
+- Sem rastreamento ou analytics (por enquanto)
+- Sem cookies ou armazenamento local
+- Amigável com Content Security Policy
+- Sem coleta de dados sensíveis
 
-## 📊 Deployment
+## 📊 Deploy
 
-### Automatic CI/CD Pipeline
+### Pipeline de CI/CD Automático
 
-This site uses GitHub Actions to automatically deploy to AWS CloudFront:
+Este site usa GitHub Actions para fazer deploy automático no AWS CloudFront:
 
-1. **On Push to Main** → GitHub Actions workflow triggers
-2. **Build & Validate** → HTML is validated for correctness
-3. **Deploy to S3** → Files uploaded to AWS S3 bucket
-4. **CloudFront Invalidation** → Cache is invalidated for instant updates
-5. **Live** → Site is live at [bremgar.dev.br](https://bremgar.dev.br)
+1. **No Push para Main** → Workflow do GitHub Actions dispara
+2. **Build & Validação** → HTML é validado quanto à correção
+3. **Deploy para S3** → Arquivos são feitos upload para bucket AWS S3
+4. **Invalidação CloudFront** → Cache é invalidado para atualizações instantâneas
+5. **Ao Vivo** → Site está ao vivo em [bremgar.dev.br](https://bremgar.dev.br)
 
-See `.github/workflows/deploy.yml` for implementation details.
+Veja `.github/workflows/deploy.yml` para detalhes de implementação.
 
-## 🎓 Learning & Inspiration
+## 🎓 Aprendizado & Inspiração
 
-This project demonstrates:
+Este projeto demonstra:
 
-- **Modern Web Standards** — HTML5 semantics, CSS3 features, ES6+ JavaScript
-- **Zero-Dependency Development** — Building robust sites without frameworks
-- **Modular CSS** — Organized stylesheet architecture
-- **Interactive Design** — Engaging animations without frameworks
-- **Responsive Design** — Mobile-first approach
-- **CI/CD Practices** — Automated testing and deployment
-- **SEO Best Practices** — Meta tags, structured markup, performance optimization
+- **Padrões Web Modernos** — Semântica HTML5, recursos CSS3, JavaScript ES6+
+- **Desenvolvimento Zero-Dependência** — Construindo sites robustos sem frameworks
+- **CSS Modular** — Arquitetura organizada de stylesheets
+- **Design Interativo** — Animações atraentes sem frameworks
+- **Design Responsivo** — Abordagem mobile-first
+- **Práticas de CI/CD** — Testes e deployment automático
+- **Melhores Práticas de SEO** — Meta tags, markup estruturado, otimização de performance
 
 ---
 
 <div align="center">
 
-**Always learning, always sharing the journey.** 🚀
+**Sempre aprendendo, sempre compartilhando a jornada.** 🚀
 
-Made with ❤️ by [João Bremgartner](https://github.com/engjoaofaro)
+Feito com ❤️ por [João Bremgartner](https://github.com/engjoaofaro)
 
 </div>

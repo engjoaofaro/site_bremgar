@@ -1,18 +1,18 @@
-# GitHub Repository Settings
+# Configurações do Repositório GitHub
 
-This document contains recommended settings for the GitHub repository page.
+Este documento contém as configurações recomendadas para a página do repositório no GitHub.
 
-## 📝 Repository Description
+## 📝 Descrição do Repositório
 
-**Current (or suggested):**
+**Sugerida:**
 
-> Personal portfolio website showcasing projects and expertise. Built with vanilla HTML5, CSS3, and JavaScript — zero dependencies, modern design, beautiful animations, fully responsive.
+> Portfólio pessoal apresentando projetos e expertise. Construído com HTML5, CSS3 e JavaScript puro — zero dependências, design moderno, animações bonitas, totalmente responsivo.
 
-**Keywords:** portfolio, personal-website, html5, css3, javascript, vanilla-js, responsive-design, animations
+**Palavras-chave:** portfólio, site-pessoal, html5, css3, javascript, vanilla-js, design-responsivo, animações
 
-## 🏷️ Repository Topics
+## 🏷️ Tópicos do Repositório
 
-Add these topics to improve discoverability:
+Adicione estes tópicos para melhorar a discoverabilidade:
 
 - `portfolio`
 - `personal-website`
@@ -21,48 +21,48 @@ Add these topics to improve discoverability:
 - `javascript`
 - `vanilla-js`
 - `responsive-design`
-- `animation`
+- `animations`
 - `dark-theme`
 - `aws-cloudfront`
 - `github-actions`
-- `no-dependencies`
+- `zero-dependencies`
 
-## 🔗 About Section
+## 🔗 Seção Sobre
 
-**Website URL:** `https://bremgar.dev.br`
+**URL do Website:** `https://bremgar.dev.br`
 
-**Include in README:** ✅ Already included
+**Incluída no README:** ✅ Já incluída
 
-## 🎯 Visibility Settings
+## 🎯 Configurações de Visibilidade
 
-- **Repository Type:** Public
-- **GitHub Pages:** Disabled (using CloudFront instead)
-- **Issues:** Enabled
-- **Discussions:** Consider enabling for feedback
+- **Tipo de Repositório:** Público
+- **GitHub Pages:** Desativado (usando CloudFront em vez disso)
+- **Issues:** Ativadas
+- **Discussions:** Considere ativar para feedback
 
-## 📌 Pinned Items
+## 📌 Itens Fixados
 
-Consider pinning 1-2 of your best featured projects from the site.
+Considere fixar 1-2 de seus melhores projetos em destaque do site.
 
-## 🔄 Sync Instructions
+## 🔄 Instruções de Sincronização
 
-To update these settings on GitHub:
+Para atualizar essas configurações no GitHub:
 
-1. Go to: `https://github.com/engjoaofaro/site_bremgar/settings`
-2. Scroll to "About" section
-3. Click the edit icon (pencil)
-4. Update:
-   - **Description:** Copy from above
+1. Vá para: `https://github.com/engjoaofaro/site_bremgar/settings`
+2. Procure pela seção "About"
+3. Clique no ícone de edição (lápis)
+4. Atualize:
+   - **Description:** Copie da sugestão acima
    - **Website:** `https://bremgar.dev.br`
-   - **Topics:** Add the topics listed above
-5. Save changes
+   - **Topics:** Adicione os tópicos listados acima
+5. Salve as alterações
 
-## 📋 Pre-launch Checklist
+## 📋 Checklist Pré-lançamento
 
-- [ ] Repository description updated
-- [ ] Topics/tags added
-- [ ] Website URL configured
-- [ ] README reviewed
-- [ ] License file present (MIT)
-- [ ] Contributing guidelines clear
-- [ ] Contact information accessible
+- [ ] Descrição do repositório atualizada
+- [ ] Tópicos/tags adicionados
+- [ ] URL do website configurada
+- [ ] README revisado
+- [ ] Arquivo de licença presente (MIT)
+- [ ] Diretrizes de contribuição claras
+- [ ] Informações de contato acessíveis
