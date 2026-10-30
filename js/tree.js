@@ -58,6 +58,12 @@ class TreeBuilder {
               url: 'https://github.com/engjoaofaro/scheduler-webapp'
             }
           }
+        },
+        'terminal-apps/': {
+          'gamecal': {
+            type: 'link',
+            url: 'https://github.com/engjoaofaro/gamecal'
+          }
         }
       }
     };
